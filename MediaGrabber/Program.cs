@@ -26,6 +26,7 @@ namespace MediaGrabber
         {
             using (WebClient webClient = new WebClient())
             {
+                webClient.Headers.Add("User-Agent: Other");
                 var pageSource = webClient.DownloadString(uri);
 
                 string directory = uri.AbsolutePath.Substring(uri.AbsolutePath.LastIndexOf("/") + 1);
